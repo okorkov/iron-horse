@@ -25,7 +25,8 @@ and (min-width : 300px) {
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    
+    height: 100%;
+    position: relative;
   }
 
   
@@ -46,6 +47,7 @@ and (min-width : 300px) {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    opacity: 0.9;
   }
 
   .ihs {
@@ -57,6 +59,17 @@ and (min-width : 300px) {
     font-family: Georgia, serif;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+  }
+
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  opacity: 0.3;
   }
   
 }
@@ -109,6 +122,7 @@ and (max-device-width : 480px) {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    opacity: 0.9;
   }
 
   .ihs {
