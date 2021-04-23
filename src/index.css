@@ -25,17 +25,36 @@ and (min-width : 481px) {
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    
   }
+
   
   @keyframes fadeInAnimation {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;
-     }
+      opacity: 1;
+    }
+  }
+  
+  .hero-image {
+    background-image: url("./header.jpeg");
+    background-color: #cccccc;
+    height: 20rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
 
+  .ihs {
+    padding: 0;
+    margin: 0;
+    color:white;
+    font-size: 8rem;
+  }
+  
 }
 
 
@@ -76,6 +95,24 @@ and (max-device-width : 480px) {
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+  }
+
+  .hero-image {
+    background-image: url("./header.jpeg");
+    background-color: #cccccc;
+    height: 10rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .ihs {
+    padding-top: 5%;
+    margin: 0;
+    color:white;
+    font-size: 2.5rem;
+    text-align: center;
   }
   
 }
