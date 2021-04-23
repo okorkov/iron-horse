@@ -1,7 +1,7 @@
 
 /* Desktops and laptops ----------- */
 @media only screen 
-and (min-width : 481px) {
+and (min-width : 300px) {
   * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -49,10 +49,14 @@ and (min-width : 481px) {
   }
 
   .ihs {
-    padding: 0;
+    padding-top: 10rem;
+    padding-left: 3%;
     margin: 0;
     color:white;
-    font-size: 8rem;
+    font-size: 4rem;
+    font-family: Georgia, serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
   }
   
 }
@@ -108,11 +112,14 @@ and (max-device-width : 480px) {
   }
 
   .ihs {
-    padding-top: 5%;
+    padding-top: 15%;
     margin: 0;
     color:white;
     font-size: 2.5rem;
     text-align: center;
+    font-family: Georgia, serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
   }
   
 }
