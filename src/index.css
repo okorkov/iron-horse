@@ -104,6 +104,9 @@ and (min-width : 300px) {
 
   #about {
     min-height: 50rem;
+
+    align-items: center;
+    text-align: center;
   }
 
   #projects {
@@ -114,8 +117,35 @@ and (min-width : 300px) {
     min-height: 50rem;
   }
 
-  #contact {
+  #contacts {
     min-height: 50rem;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+    margin-top: 4%;
+  }
+
+  .fixed-top {
+    position: sticky !important;
+    
+  }
+
+  .about-text {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 18px;
+    font-family: "Raleway";
+  }
+
+  .about-text-hello {
+    padding-top: 2%;
+    font-family: "Raleway";
+    font-size: 44px;
   }
 
   
@@ -215,6 +245,32 @@ and (max-device-width : 480px) {
   
   #_2iAdU > div {
     padding: 0 !important;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    margin-top: 30%;
+  }
+
+  .fixed-top {
+    position: sticky !important;
+  }
+
+  .about-text {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 22px;
+    font-family: "Raleway";
+  }
+
+  .about-text-hello {
+    padding-top: 2%;
+    font-family: "Raleway";
+    font-size: 44px;
   }
   
 }
