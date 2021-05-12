@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProjectsGallery = () => {
   return (
-    <div>
+    <div id="projects">
       Projects Gal
     </div>
   );

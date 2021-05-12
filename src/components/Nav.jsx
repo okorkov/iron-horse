@@ -9,37 +9,34 @@ import {
   faTree,
   faHammer
 } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "reactjs-navbar/dist/index.css";
-import About from './About';
-import Contacts from './Contacts';
-import WoodGallery from './WoodGallery';
-import ProjectsGallery from './ProjectsGallery';
-import ErrorPage from './ErrorPage';
 
- 
+import "reactjs-navbar/dist/index.css";
+
+
+
+
+
 class Nav extends Component {
   state = {
     isLoading: false,
   };
  
   render() {
+
     return (
-      <Router>
-        <Navbar
+      <div id="navbar_top" className="navbar">
+        <Navbar 
           logo={logo}
           loader={<Loader type="Puff" color="#D85B5B" height={25} width={25} />}
           isLoading={this.state.isLoading}
-          helpCallback={() => {
-            alert("I need help... and coffee...");
-          }}
           menuItems={[
             {
               title: "About",
               icon: faUserCircle,
+              path:"/",
               isAuth: true,
               onClick: () => {
-
+                window.location.href = "#about";
               },
             },
             {
@@ -52,7 +49,7 @@ class Nav extends Component {
                   icon: faHammer,
                   isAuth: true,
                   onClick: () => {
-
+                    window.location.href = "#projects";
                   },
                 },
                 {
@@ -60,7 +57,7 @@ class Nav extends Component {
                   icon: faTree,
                   isAuth: true,
                   onClick: () => {
-
+                    window.location.href = "#wood";
                   },
                 },
               ],
@@ -69,23 +66,16 @@ class Nav extends Component {
               title: "Contacts",
               icon: faAddressBook,
               isAuth: true,
-              onClick: () => {
-
+              onClick: () => { 
+                window.location.href = "#contacts";
               },
             },
           ]}
         />
-
-      <Switch>
-        <Route path={'/'} exact component={About} />
-        <Route path={'/contacts'} component={Contacts} />
-        <Route path={'/projects'} component={ProjectsGallery} />
-        <Route path={'/wood'} component={WoodGallery} />
-        <Route component={ErrorPage} />
-      </Switch>
-      </Router>
+      </div>
     );
   }
 }
+
 
 export default Nav;

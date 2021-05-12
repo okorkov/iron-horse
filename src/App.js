@@ -1,18 +1,26 @@
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { BrowserRouter as Router} from "react-router-dom";
+import About from './components/About';
+import Contacts from './components/Contacts';
+import WoodGallery from './components/WoodGallery';
+import ProjectsGallery from './components/ProjectsGallery';
+
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Nav />
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <Header />
+      <Nav />
+      <About />
+      <ProjectsGallery />
+      <WoodGallery />
+      <Contacts />
+      <Footer />
+    </div>
   );
 }
 
 export default App;
+

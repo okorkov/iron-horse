@@ -102,6 +102,22 @@ and (min-width : 300px) {
     --pcol: #1a4240 !important;
   }
 
+  #about {
+    min-height: 50rem;
+  }
+
+  #projects {
+    min-height: 50rem;
+  }
+
+  #wood {
+    min-height: 50rem;
+  }
+
+  #contact {
+    min-height: 50rem;
+  }
+
   
 }
 
