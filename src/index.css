@@ -44,7 +44,7 @@ and (min-width : 300px) {
   .hero-image {
     background-image: url("./header.jpeg");
     background-color: #cccccc;
-    height: 20rem;
+    height: 15rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,9 +102,6 @@ and (min-width : 300px) {
     --pcol: #1a4240 !important;
   }
 
-  #_2iAdU > div {
-    padding-left: 10% !important;
-  }
   
 }
 
@@ -198,6 +195,10 @@ and (max-device-width : 480px) {
 
   ._3Kbya {
     display: none !important;
+  }
+  
+  #_2iAdU > div {
+    padding: 0 !important;
   }
   
 }

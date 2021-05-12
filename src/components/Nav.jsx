@@ -4,11 +4,11 @@ import Navbar from "reactjs-navbar";
 import logo from './iron-horse-white.png';
 import Loader from "react-loader-spinner";
 import {
-  faUser,
-  faBookOpen,
-  faGlobe,
-  faChartPie,
-  faCogs /*...*/,
+  faUserCircle,
+  faImages,
+  faAddressBook,
+  faTree,
+  faHammer
 } from "@fortawesome/free-solid-svg-icons";
  
 import "reactjs-navbar/dist/index.css";
@@ -29,8 +29,8 @@ class Nav extends Component {
         }}
         menuItems={[
           {
-            title: "Administration",
-            icon: faUser,
+            title: "About",
+            icon: faUserCircle,
             isAuth: true,
             onClick: () => {
               // What you want to do...
@@ -38,26 +38,13 @@ class Nav extends Component {
             },
           },
           {
-            title: "Transactions",
-            icon: null,
-            isAuth: () => {
-              // Claim authorization logic...
-              return false;
-            },
-          },
-          {
-            title: "Networks",
-            icon: null,
-            isAuth: true,
-          },
-          {
-            title: "Settings",
-            icon: null,
+            title: "Gallery",
+            icon: faImages,
             isAuth: true,
             subItems: [
               {
-                title: "Subitem 1",
-                icon: null,
+                title: "Projects",
+                icon: faHammer,
                 isAuth: true,
                 onClick: () => {
                   // What you want to do...
@@ -65,78 +52,16 @@ class Nav extends Component {
                 },
               },
               {
-                title: "Subitem 2",
-                icon: null,
+                title: "Wood",
+                icon: faTree,
                 isAuth: true,
-                subItems: [
-                  { title: "Subitem 2-1", icon: null, isAuth: true },
-                  {
-                    title: "Subitem 2-2",
-                    icon: null,
-                    isAuth: true,
-                    subItems: [
-                      {
-                        title: "Subitem 2-2-1",
-                        icon: faUser,
-                        isAuth: true,
-                        subItems: [
-                          {
-                            title: "Subitem 2-2-2-1",
-                            icon: faUser,
-                            isAuth: true,
-                          },
-                          {
-                            title: "Subitem 2-2-2-2",
-                            icon: faUser,
-                            isAuth: true,
-                          },
-                          {
-                            title: "Subitem 2-2-2-3",
-                            icon: faUser,
-                            isAuth: true,
-                          },
-                          {
-                            title: "Subitem 2-2-2-4",
-                            icon: faUser,
-                            isAuth: true,
-                          },
-                        ],
-                      },
-                      {
-                        title: "Subitem 2-2-2",
-                        icon: null,
-                        isAuth: true,
-                      },
-                    ],
-                  },
-                  {
-                    title: "Make request",
-                    icon: null,
-                    isAuth: true,
-                    onClick: () => {
-                      // What you want to do...
-                      this.setState({ isLoading: true }, () =>
-                        setTimeout(() => {
-                          this.setState({ isLoading: false });
-                        }, 3000)
-                      );
-                    },
-                  },
-                ],
-              },
-              {
-                title: "Subitem 3",
-                icon: faUser,
-                isAuth: () => {
-                  // Claim authorization logic...
-                  return false;
-                },
+                
               },
             ],
           },
           {
-            title: "Reports",
-            icon: faChartPie,
+            title: "Contacts",
+            icon: faAddressBook,
             isAuth: true,
           },
         ]}
