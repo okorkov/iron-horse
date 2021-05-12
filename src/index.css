@@ -27,7 +27,8 @@ and (min-width : 300px) {
     animation-fill-mode: forwards;
     height: 100%;
     position: relative;
-    background: #212529;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c2c2c 74%);
     color: white;
   }
 
@@ -100,6 +101,7 @@ and (min-width : 300px) {
 
   :root {
     --pcol: #1a4240 !important;
+    --tspeed: 0s !important;
   }
 
   #about {
