@@ -105,22 +105,21 @@ and (min-width : 300px) {
   }
 
   #about {
-    min-height: 50rem;
-
+    /* min-height: 50rem; */
     align-items: center;
     text-align: center;
   }
 
   #projects {
-    min-height: 50rem;
+    padding-top: 7%;
   }
 
   #wood {
-    min-height: 50rem;
+    padding-top: 7%;
   }
 
   #contacts {
-    min-height: 50rem;
+    padding-top: 7%;
   }
 
   .avatar {
@@ -148,6 +147,24 @@ and (min-width : 300px) {
     padding-top: 2%;
     font-family: "Raleway";
     font-size: 44px;
+  }
+
+  .styles_wrapper__1kG3C {
+    min-height: 0 !important;
+    background: none !important;
+  }
+
+  .styles_gridItem__nPXhF figcaption {
+    padding: 0 !important;
+  }
+
+  .category {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 30px;
+    font-family: "Raleway";
+    color: #979797;
+    text-align: center;
   }
 
   
@@ -273,6 +290,21 @@ and (max-device-width : 480px) {
     padding-top: 2%;
     font-family: "Raleway";
     font-size: 44px;
+  }
+
+
+  .styles_wrapper__1kG3C {
+    min-height: 0 !important;
+    background: none !important;
+  }
+
+  .category {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 30px;
+    font-family: "Raleway";
+    color: #979797;
+    text-align: center;
   }
   
 }
