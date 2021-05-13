@@ -9656,6 +9656,11 @@
   dependencies:
     "prop-types" "^15.7.2"
 
+"react-mail-form@^2.1.0":
+  "integrity" "sha512-cBxm9WmQdKGrjruOFv08jrdXnJBZ9Ywh+3MGTBRCwi2DaftHAkIefWfV/+KhQ/iTdvaLb3rYBZqJGC6kIH8VmQ=="
+  "resolved" "https://registry.npmjs.org/react-mail-form/-/react-mail-form-2.1.0.tgz"
+  "version" "2.1.0"
+
 "react-refresh@^0.8.3", "react-refresh@>=0.8.3 <0.10.0":
   "integrity" "sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"

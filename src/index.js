@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
       if (window.scrollY > 240) {
         document.getElementById('navbar_top').classList.add('fixed-top');
-        document.getElementById('navbar_top').style.backgroundColor = 'black';
+        document.getElementById('navbar_top').style.backgroundColor = '#0c0c0c';
       } else {
         document.getElementById('navbar_top').classList.remove('fixed-top');
         document.getElementById('navbar_top').style.backgroundColor = 'inherit';

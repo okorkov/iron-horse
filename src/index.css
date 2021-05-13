@@ -167,6 +167,10 @@ and (min-width : 300px) {
     text-align: center;
   }
 
+  .styles_gridItem__nPXhF figure > div > img {
+    opacity: 0.7 !important;
+  }
+
   
 }
 
@@ -305,6 +309,10 @@ and (max-device-width : 480px) {
     font-family: "Raleway";
     color: #979797;
     text-align: center;
+  }
+
+  .styles_gridItem__nPXhF figure > div > img {
+    opacity: 1 !important;
   }
   
 }

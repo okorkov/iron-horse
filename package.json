@@ -15,6 +15,7 @@
     "react-full-page": "^0.1.11",
     "react-image-and-background-image-fade": "^1.0.6",
     "react-loader-spinner": "^4.0.0",
+    "react-mail-form": "^2.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
