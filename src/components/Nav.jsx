@@ -7,7 +7,8 @@ import {
   faImages,
   faAddressBook,
   faTree,
-  faHammer
+  faHammer,
+  faEnvelopeOpen
 } from "@fortawesome/free-solid-svg-icons";
 
 import "reactjs-navbar/dist/index.css";
@@ -26,7 +27,7 @@ class Nav extends Component {
     return (
       <div id="navbar_top" className="navbar">
         <Navbar 
-          logo={logo}
+          // logo={logo}
           loader={<Loader type="Puff" color="#D85B5B" height={25} width={25} />}
           isLoading={this.state.isLoading}
           menuItems={[
@@ -63,11 +64,11 @@ class Nav extends Component {
               ],
             },
             {
-              title: "Contacts",
-              icon: faAddressBook,
+              title: "Contact",
+              icon: faEnvelopeOpen,
               isAuth: true,
               onClick: () => { 
-                window.location.href = "#contacts";
+                window.location.href = "#contact";
               },
             },
           ]}

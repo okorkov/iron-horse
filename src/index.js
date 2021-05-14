@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-document.getElementsByClassName('_R2FsI')[0].addEventListener('click', (e) => {
-  window.location.href = "#";
-})
+// document.getElementsByClassName('_R2FsI')[0].addEventListener('click', (e) => {
+//   window.location.href = "#";
+// })
