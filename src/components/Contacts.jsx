@@ -5,7 +5,7 @@ import React from 'react';
 
   const Contacts = () => {
   
-  const email = 'address@gmail.com';
+  const email = 'charles@ironhorsestudio.net';
   
   const [subject, setSubject] = React.useState({subject: ''});
   const [body, setBody] = React.useState({body: ''});
