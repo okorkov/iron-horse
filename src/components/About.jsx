@@ -17,7 +17,7 @@ const About = () => {
         tailored to your liking! We always have a nice, rotating inventory as well if
         you would like to do your own project. We are a full-service wood mill,
         and offer planing, sanding, and milling services; collaberating with a local
-        Master Metalsmith if needed. Feel free to {<a href="#contacts" style={{color:'white'}}>reach out</a>}, and let&#39;s talk about
+        Master Metalsmith if needed. Feel free to {<a href="#contact" style={{color:'white'}}>reach out</a>}, and let&#39;s talk about
         your next project!</p>
     </div>
   );
