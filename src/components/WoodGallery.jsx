@@ -14,26 +14,18 @@ class WoodGallery extends Component {
       },
       {
         url:
-          "https://live.staticflickr.com/65535/51175227383_c95e478f97_o.jpg",
-        
-        thumbUrl:
-          "https://live.staticflickr.com/65535/51175227383_9a34940ffa_n.jpg"
-      },
-      {
-        url:
-          "https://live.staticflickr.com/65535/51175004506_e19e74ac4e_o.jpg",
-        
-        thumbUrl:
-          "https://live.staticflickr.com/65535/51175004506_5cae18b8d8_n.jpg"
-      },
-      {
-        url:
           "https://live.staticflickr.com/65535/51175227428_bb9c008d08_o.jpg",
         
         thumbUrl:
           "https://live.staticflickr.com/65535/51175227428_bb050976a8_n.jpg"
       },
-
+      {
+        url:
+          "https://live.staticflickr.com/65535/51174328417_3e098cfb06_o.jpg",
+        
+        thumbUrl:
+          "https://live.staticflickr.com/65535/51174328417_812e0fe2d5_n.jpg"
+      },
       {
         url:
           "https://live.staticflickr.com/65535/51175227438_34d651dc71_o.jpg",
@@ -43,11 +35,11 @@ class WoodGallery extends Component {
       },
       {
         url:
-          "https://live.staticflickr.com/65535/51174328417_3e098cfb06_o.jpg",
+          "https://live.staticflickr.com/65535/51175227383_c95e478f97_o.jpg",
         
         thumbUrl:
-          "https://live.staticflickr.com/65535/51174328417_812e0fe2d5_n.jpg"
-      }
+          "https://live.staticflickr.com/65535/51175227383_9a34940ffa_n.jpg"
+      },
     ];
 
     return (
