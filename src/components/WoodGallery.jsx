@@ -3,8 +3,19 @@ import React, { Component } from "react";
 import DztImageGalleryComponent from "reactjs-image-gallery";
 
 class WoodGallery extends Component {
+
+  state = {
+    images: []
+  }
+
+  componentDidMount() {
+    if(this.props.data){
+      this.setState({images: this.props.data});
+    }
+  }
+
   render() {
-    let data = [
+    let backupData = [
       {
         url:
           "https://live.staticflickr.com/65535/51175791824_b657477398_o.jpg",
@@ -45,7 +56,11 @@ class WoodGallery extends Component {
     return (
       <div id="wood">
         <p className="category">Our Wood</p>
-        <DztImageGalleryComponent images={data} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>
+        {(this.props.data)?
+        <DztImageGalleryComponent images={this.state.images.map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>:
+        <DztImageGalleryComponent images={backupData} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>
+        }
+        
       </div>
     );
   }

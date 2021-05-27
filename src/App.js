@@ -21,15 +21,17 @@ class App extends React.Component {
 
   render(){
     return (
+      (this.state.isLoaded)?
       <div className="App">
         <Header data={this.state.data.header}/>
         <Nav />
         <About data={this.state.data.about}/>
-        <ProjectsGallery />
-        <WoodGallery />
+        <ProjectsGallery data={this.state.data.project_pics}/>
+        <WoodGallery data={this.state.data.wood_pics}/>
         <Contacts data={this.state.data.contact}/>
         <Footer />
-      </div>
+      </div> 
+      : <div className="App"></div>
     );
   }
 }
