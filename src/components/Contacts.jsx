@@ -1,12 +1,9 @@
 import React from 'react';
 
+  const Contacts = (props) => {
 
+  let email = (props.data)? props.data.email : 'charles@ironhorsestudio.net';
 
-
-  const Contacts = () => {
-  
-  const email = 'charles@ironhorsestudio.net';
-  
   const [subject, setSubject] = React.useState({subject: ''});
   const [body, setBody] = React.useState({body: ''});
   let link = `mailto:${email}?subject=${subject.subject}&body=${body.body}`;

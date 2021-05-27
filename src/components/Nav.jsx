@@ -4,16 +4,11 @@ import Loader from "react-loader-spinner";
 import {
   faUserCircle,
   faImages,
-  faAddressBook,
   faTree,
   faHammer,
   faEnvelopeOpen
 } from "@fortawesome/free-solid-svg-icons";
-
 import "reactjs-navbar/dist/index.css";
-
-
-
 
 
 class Nav extends Component {
