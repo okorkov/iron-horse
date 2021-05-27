@@ -17,7 +17,7 @@ class WoodGallery extends Component {
           "https://live.staticflickr.com/65535/51175227428_bb9c008d08_o.jpg",
         
         thumbUrl:
-          "https://live.staticflickr.com/65535/51175227428_bb050976a8_n.jpg"
+          "https://live.staticflickr.com/65535/51175227428_bb050976a8_n.jpg",
       },
       {
         url:

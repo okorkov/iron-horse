@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "reactjs-navbar";
-import logo from './iron-horse-white.png';
 import Loader from "react-loader-spinner";
 import {
   faUserCircle,
