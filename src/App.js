@@ -24,7 +24,7 @@ class App extends React.Component {
       <div className="App">
         <Header data={this.state.data.header}/>
         <Nav />
-        <About />
+        <About data={this.state.data.about}/>
         <ProjectsGallery />
         <WoodGallery />
         <Contacts data={this.state.data.contact}/>
