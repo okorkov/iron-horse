@@ -13,9 +13,19 @@ ReactDOM.render(
 
 reportWebVitals();
 
+function adjustImages() {
+  let images = document.querySelectorAll('img')
+  images.forEach(img => {
+    if(img.className === ""){
+      img.style = ""
+      img.className = "img-gallery"
+    }
+  })
+}
 
 document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
+    adjustImages();
       if (window.scrollY > 240) {
         document.getElementById('navbar_top').classList.add('fixed-top');
         document.getElementById('navbar_top').style.backgroundColor = '#0c0c0c';
@@ -25,4 +35,6 @@ document.addEventListener("DOMContentLoaded", function(){
       } 
   });
 }); 
+
+
 

@@ -10,7 +10,7 @@ class ProjectsGallery extends Component {
 
   componentDidMount() {
     if(this.props.data){
-      this.setState({images: this.props.data.reverse()});
+      this.setState({images: this.props.data});
     }
   }
 
@@ -67,8 +67,6 @@ class ProjectsGallery extends Component {
       }
     ];
 
-
-    debugger
     return (
       <div id="projects">
         <p className="category">Projects</p>
