@@ -43,7 +43,6 @@ and (min-width : 300px) {
   }
   
   .hero-image {
-    background-image: url("./header.jpeg");
     background-color: #cccccc;
     height: 15rem;
     background-position: center;
@@ -270,7 +269,6 @@ and (max-device-width : 480px) {
   }
 
   .hero-image {
-    background-image: url("./header.jpeg");
     background-color: #cccccc;
     height: 10rem;
     background-position: center;
