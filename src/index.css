@@ -32,6 +32,16 @@ and (min-width : 300px) {
     color: white;
   }
 
+  #canvas {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 5%;
+    width: 100%;
+  }
+
   
   @keyframes fadeInAnimation {
     0% {
@@ -42,7 +52,7 @@ and (min-width : 300px) {
     }
   }
   
-  .hero-image {
+  /* .hero-image {
     background-color: #cccccc;
     height: 15rem;
     background-position: center;
@@ -50,7 +60,7 @@ and (min-width : 300px) {
     background-size: cover;
     position: relative;
     opacity: 0.9;
-  }
+  } */
 
   .ihs {
     padding-top: 8%;
@@ -61,6 +71,7 @@ and (min-width : 300px) {
     font-family: Georgia, serif;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    opacity: 0.9;
   }
 
   .footer {
@@ -89,10 +100,10 @@ and (min-width : 300px) {
     transition: none !important;
   }
 
-  ._3HDv1 {
-    margin-right: 10% !important;
-    margin-left: 10% !important;
-  }
+  /* ._3HDv1 {
+    margin-right: 10% !important; 
+     margin-left: 10% !important;
+  } */
 
   ._3Kbya {
     display: none !important;
@@ -244,6 +255,16 @@ and (max-device-width : 480px) {
     box-sizing: border-box;
   }
   
+
+  #canvas {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 3%;
+    width: 100%;
+  }
   
   body {
     margin: 0;

@@ -7,6 +7,7 @@ import WoodGallery from './components/WoodGallery';
 import ProjectsGallery from './components/ProjectsGallery';
 import React from 'react'
 import axios from 'axios';
+import Yelp from './components/Yelp';
 class App extends React.Component {
 
   state = {
@@ -28,6 +29,7 @@ class App extends React.Component {
         <About data={this.state.data.about}/>
         <ProjectsGallery data={this.state.data.project_pics}/>
         <WoodGallery data={this.state.data.wood_pics}/>
+        <Yelp />
         <Contacts data={this.state.data.contact}/>
         <Footer />
       </div> 

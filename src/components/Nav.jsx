@@ -6,7 +6,8 @@ import {
   faImages,
   faTree,
   faHammer,
-  faEnvelopeOpen
+  faEnvelopeOpen,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 import "reactjs-navbar/dist/index.css";
 
@@ -56,6 +57,14 @@ class Nav extends Component {
                   },
                 },
               ],
+            },
+            {
+              title: "Reviews",
+              icon: faStar,
+              isAuth: true,
+              onClick: () => { 
+                window.location.href = "#yelp";
+              },
             },
             {
               title: "Contact",
