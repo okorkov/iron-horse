@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://cors-anywhere.herokuapp.com/https://ironhorsestudio.herokuapp.com/api')
+    axios.get('https://ironhorsestudio.herokuapp.com/api')
     .then(data => this.setState({ isLoaded: true, data: data.data}))
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer qeFH5UPL9KU6OyCNvfeb6lkRxBrHvDY-HQ0uGH9nqH7PCTOO7IE9Vk-K4PYAGyNqq3IChAcFu35PbKhw4D9003qmSQhicplRzn_YKFzJH7hCi7xsOl9KhJzJLQvAYHYx");
