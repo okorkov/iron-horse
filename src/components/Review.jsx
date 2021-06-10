@@ -57,6 +57,7 @@ import Divider from '@material-ui/core/Divider';
 import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded';
 import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBordered';
 import StarRateIcon from '@material-ui/icons/StarRate';
+import { StarRateSharp } from '@material-ui/icons';
 
 
 
@@ -89,9 +90,9 @@ const useStyles = makeStyles(({ palette }) => ({
     // marginBottom: '0.875em',
   },
   statLabel: {
-    fontSize: 15,
+    fontSize: 16,
     // color: palette.grey[500],
-    fontWeight: 500,
+    fontWeight: 400,
     fontFamily:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     margin: 0,
@@ -111,21 +112,33 @@ export const DayCard = React.memo(function ProfileCard({review}) {
     borderColor: 'rgba(0, 0, 0, 0.08)',
     height: '50%',
   });
+
+  const displayStars = (rating) => {
+    let stars = []
+    for (let i = 0; i < rating; i++) {
+      stars.push(<StarRateIcon />)
+    }
+    return stars
+  }
+
   return (
     <div className="Day-card">
         <Card className={cx(styles.card, shadowStyles.root)}>
           <CardContent>
             <Avatar className={styles.avatar} src={review.user.image_url} />
             <h3 className={styles.heading}>{review.user.name}</h3>
-            <span className={styles.subheader}>{review.time_created}</span>
+            <h6 className={styles.subheader}>{review.time_created.split(' ')[0]}</h6>
+            {displayStars(review.rating)}
+            <p className={styles.statLabel}>{review.text}</p>
           </CardContent>
-          <Divider light />
-          <Box display={'flex'}>
+          {/* <Divider light /> */}
+          {/* <Box display={'flex'}>
             <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
               <p className={styles.statLabel}>{review.text}</p>
             </Box>
-          </Box>
+          </Box> */}
         </Card>
+        <br></br>
     </div>
   );
 });
