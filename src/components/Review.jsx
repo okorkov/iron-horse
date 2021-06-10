@@ -1,63 +1,15 @@
-// import React from 'react';
-// import StarRateIcon from '@material-ui/icons/StarRate';
-
-
-// export default class Review extends React.Component {
-
-//   // state = {
-//   //   reviews: {}
-//   // }
-
-//   // componentDidMount() {
-
-//   //   let y_key = this.props.data.key
-
-//   //   fetch("https://api.yelp.com/v3/business/iron-horse-studio-fairfax/reviews", {
-//   //     method: "GET",
-//   //     headers: {
-//   //       "Authorization": `Bearer ${y_key}`,
-//   //       "Content-Type": "application/json",
-//   //     },
-//   //     body: JSON.stringify({ reviews: 'reviews' }),
-//   //   })
-//   //     .then((resp) => resp.json())
-//   //     .then((data) => {
-//   //       this.setState({
-//   //         reviews: data
-//   //       })
-//   //     })
-//   //     .catch(console.log);
-//   // };
-
-//   displayReviews = () => {
-//     this.props.data.reviews.map((review) => {
-//       return <Review review={review} />
-//     })
-//   }
-
-//   render() {
-//     return (
-//       <div className="Y">
-//         <p>{this.props.review.text}</p>
-//       </div>
-//     );
-//   };
-
-// };
 
 
 import React from 'react';
 import cx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-import Divider from '@material-ui/core/Divider';
 import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded';
-import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBordered';
-import StarRateIcon from '@material-ui/icons/StarRate';
-import { StarRateSharp } from '@material-ui/icons';
+
+
+
 
 
 
@@ -67,15 +19,15 @@ const useStyles = makeStyles(({ palette }) => ({
     maxWidth: 620,
     textAlign: 'center',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
-    background: 'linear-gradient(#568ea6, #305f72)',
+    background: 'rgb(35, 38, 43)',
     color: 'rgb(255,255,255)'
   },
   avatar: {
     width: 65,
     height: 65,
     margin: 'auto',
-    marginTop: -10,
-    marginBottom: -10,
+    marginTop: 10,
+    marginBottom: 10,
   },
   heading: {
     fontSize: 16,
@@ -86,7 +38,7 @@ const useStyles = makeStyles(({ palette }) => ({
   },
   subheader: {
     fontSize: 14,
-    // color: palette.grey[500],
+    color: palette.grey[500],
     // marginBottom: '0.875em',
   },
   statLabel: {
@@ -103,22 +55,57 @@ const useStyles = makeStyles(({ palette }) => ({
     marginBottom: 4,
     letterSpacing: '1px',
   },
+  rating: {
+
+  }
 }));
 
 export const DayCard = React.memo(function ProfileCard({review}) {
   const styles = useStyles();
   const shadowStyles = useFadedShadowStyles();
-  const borderedGridStyles = useGutterBorderedGridStyles({
-    borderColor: 'rgba(0, 0, 0, 0.08)',
-    height: '50%',
-  });
+
 
   const displayStars = (rating) => {
-    let stars = []
-    for (let i = 0; i < rating; i++) {
-      stars.push(<StarRateIcon />)
+    const zero = <img src="/yelp_stars/0.png" className={styles.rating} alt="yelp-start"/>
+    const one = <img src="/yelp_stars/1.png" className={styles.rating} alt="yelp-start"/>
+    const one_half = <img src="/yelp_stars/1_half.png" className={styles.rating} alt="yelp-start"/>
+    const two = <img src="/yelp_stars/2.png" className={styles.rating} alt="yelp-start"/>
+    const two_half = <img src="/yelp_stars/2_half.png" className={styles.rating} alt="yelp-start"/>
+    const three = <img src="/yelp_stars/3.png" className={styles.rating} alt="yelp-start"/>
+    const three_half = <img src="/yelp_stars/3_half.png" className={styles.rating} alt="yelp-start"/>
+    const four = <img src="/yelp_stars/4.png" className={styles.rating} alt="yelp-start"/>
+    const four_half = <img src="/yelp_stars/4_half.png" className={styles.rating} alt="yelp-start"/>
+    const five = <img src="/yelp_stars/5.png" className={styles.rating} alt="yelp-start"/>
+
+    switch(rating){
+    case 0:
+      return zero;
+    case 1:
+      return one;
+    case 1.5:
+      return one_half;
+    case 2:
+      return two;
+    case 2.5:
+      return two_half;
+    case 3:
+      return three;
+    case 3.5:
+      return three_half;
+    case 4:
+      return four;
+    case 4.5:
+      return four_half;
+    case 5:
+      return five;
+    default:
+      return null;
     }
-    return stars
+  }
+
+  const processTime = (time) => {
+    const new_time = time.split('-')
+    return `${new_time[1]}/${new_time[2]}/${new_time[0]}`;
   }
 
   return (
@@ -127,20 +114,14 @@ export const DayCard = React.memo(function ProfileCard({review}) {
           <CardContent>
             <Avatar className={styles.avatar} src={review.user.image_url} />
             <h3 className={styles.heading}>{review.user.name}</h3>
-            <h6 className={styles.subheader}>{review.time_created.split(' ')[0]}</h6>
+            <h6 className={styles.subheader}>{processTime(review.time_created.split(' ')[0])}</h6>
             {displayStars(review.rating)}
-            <p className={styles.statLabel}>{review.text}</p>
+            <p className={styles.statLabel}>{review.text} <a href={review.url} target="_blank"style={{ color:'white'}} rel="noreferrer">Read More</a></p>
           </CardContent>
-          {/* <Divider light /> */}
-          {/* <Box display={'flex'}>
-            <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-              <p className={styles.statLabel}>{review.text}</p>
-            </Box>
-          </Box> */}
         </Card>
         <br></br>
     </div>
   );
 });
 
-export default DayCard
+export default DayCard;

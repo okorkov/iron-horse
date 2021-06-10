@@ -1,5 +1,4 @@
 import React from 'react';
-import StarRateIcon from '@material-ui/icons/StarRate';
 import Review from './Review.jsx'
 
 
@@ -14,8 +13,9 @@ export default class Yelp extends React.Component {
 
   render() {
     return (
-      <div className="Yelp-section">
-        <h2> Yelp Reviews</h2>
+      <div className="Yelp-section" id="yelp">
+        <a href="https://www.yelp.com/biz/iron-horse-studio-fairfax" target="_blank" rel="noreferrer"><div className="main-header_logo" ></div></a>
+        <a href="https://www.yelp.com/biz/iron-horse-studio-fairfax" target="_blank" className="btn btn-danger" style={{marginTop: '2%'}} rel="noreferrer">Write a Review</a>
         <br></br>
         <div>{this.displayReviews()}</div>
       </div>

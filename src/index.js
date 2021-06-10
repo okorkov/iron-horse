@@ -25,22 +25,11 @@ function adjustImages() {
   })
 }
 
-function removeWidgets() {
-  let widget = document.getElementsByClassName('eapps-widget-toolbar')
-  if (widget[0]) {
-    widget[0].remove()
-  }
-  document.querySelectorAll('a').forEach(e => {
-    if(e.style[0] === "animation-duration"){
-      e.remove()
-    }
-  })
-}
+
 
 document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
     adjustImages();
-    removeWidgets();
       if (window.scrollY > 240) {
         document.getElementById('navbar_top').classList.add('fixed-top');
         document.getElementById('navbar_top').style.backgroundColor = '#0c0c0c';
@@ -56,20 +45,20 @@ document.addEventListener("DOMContentLoaded", function(){
 let h, w, particles, Particle;
 
 let resizeReset = function() {
-	w = canvasBody.width = window.innerWidth ;
-	h = canvasBody.height = 300 ;
+	w = canvasBody.width = window.innerWidth;
+	h = canvasBody.height = 200 ;
 }
 
 
 const opts = {
-	particleColor: "#29b6f6",
-	lineColor: "rgb(200,200,200)",
+	particleColor: "#3d3d3d",
+	lineColor: "rgb(255, 195, 0)",
 	particleAmount: 20,
 	defaultSpeed: 0.1,
 	variantSpeed: 0.2,
-	defaultRadius: 1,
+	defaultRadius: 10,
 	variantRadius: 15,
-	linkRadius: 20,
+	linkRadius: 1,
 };
 
 window.addEventListener("resize", function(){
@@ -109,7 +98,7 @@ Particle = function(xPos, yPos){
 	this.speed = opts.defaultSpeed + Math.random() * opts.variantSpeed; 
 	this.directionAngle = Math.floor(Math.random() * 360); 
 	this.color = opts.particleColor;
-	this.radius = opts.defaultRadius + Math.random() * opts. variantRadius; 
+	this.radius = opts.defaultRadius + Math.random() * opts.variantRadius; 
 	this.vector = {
 		x: Math.cos(this.directionAngle) * this.speed,
 		y: Math.sin(this.directionAngle) * this.speed
@@ -126,8 +115,8 @@ Particle = function(xPos, yPos){
 		if (this.y >= h || this.y <= 0) {
 			this.vector.y *= -1;
 		}
-		if (this.x > w) this.x = w;
 		if (this.y > h) this.y = h;
+		if (this.x > w) this.x = w;
 		if (this.x < 0) this.x = 0;
 		if (this.y < 0) this.y = 0;	
 	};
