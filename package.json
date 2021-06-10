@@ -1,12 +1,13 @@
 {
   "name": "iron-horse",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "*",
+    "@mui-treasury/styles": "^1.13.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -49,3 +50,4 @@
     ]
   }
 }
+

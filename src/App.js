@@ -17,23 +17,23 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('https://ironhorsestudio.herokuapp.com/api')
-    .then(data => this.setState({ isLoaded: true, data: data.data}))
+      .then(data => this.setState({ isLoaded: true, data: data.data }))
   }
 
-  render(){
+  render() {
     return (
-      (this.state.isLoaded)?
-      <div className="App">
-        <Header data={this.state.data.header}/>
-        <Nav />
-        <About data={this.state.data.about}/>
-        <ProjectsGallery data={this.state.data.project_pics}/>
-        <WoodGallery data={this.state.data.wood_pics}/>
-        <Yelp />
-        <Contacts data={this.state.data.contact}/>
-        <Footer />
-      </div> 
-      : <div className="App"></div>
+      (this.state.isLoaded) ?
+        <div className="App">
+          <Header data={this.state.data.header} />
+          <Nav />
+          <About data={this.state.data.about} />
+          <ProjectsGallery data={this.state.data.project_pics} />
+          <WoodGallery data={this.state.data.wood_pics} />
+          <Yelp data={this.state.data.yelp} />
+          <Contacts data={this.state.data.contact} />
+          <Footer />
+        </div>
+        : <div className="App"></div>
     );
   }
 }
