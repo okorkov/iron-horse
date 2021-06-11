@@ -20,7 +20,7 @@
     -moz-osx-font-smoothing: grayscale;
     overflow: scroll;
     height: auto;
-    animation: fadeInAnimation ease 1s;
+    animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     height: 100%;
@@ -95,11 +95,6 @@
     background: inherit !important;
     transition: none !important;
   }
-
-  /* ._3HDv1 {
-    margin-right: 10% !important; 
-     margin-left: 10% !important;
-  } */
 
   ._3Kbya {
     display: none !important;
@@ -224,8 +219,6 @@
     outline: 0;
     padding: 10px 30px;
     font-family: "Raleway";
-    -webkit-transition: background 0.3s;
-    transition: background 0.3s;
   }
 
   .button:hover {
