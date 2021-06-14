@@ -1,6 +1,10 @@
 
 import React, { Component } from "react";
 import DztImageGalleryComponent from "reactjs-image-gallery";
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 class ProjectsGallery extends Component {
 
@@ -71,7 +75,19 @@ class ProjectsGallery extends Component {
       <div id="projects">
         <p className="category">Projects</p>
         {(this.props.data)?
-        <DztImageGalleryComponent images={this.state.images.map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/> : 
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <DztImageGalleryComponent images={this.state.images.slice(0,4).map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/> 
+          </AccordionSummary>
+          <AccordionDetails>
+          <DztImageGalleryComponent images={this.state.images.slice(4, this.state.images.length).map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/> 
+          </AccordionDetails>
+          </Accordion> 
+        : 
         <DztImageGalleryComponent images={backupData} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/> }
       </div>
     );
@@ -79,3 +95,4 @@ class ProjectsGallery extends Component {
 }
 
 export default ProjectsGallery;
+

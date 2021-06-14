@@ -38,117 +38,78 @@ document.addEventListener("DOMContentLoaded", function(){
 
 // canvas
 
-let h, w, particles, Particle;
+const img = new Image();
 
-let resizeReset = function() {
-	w = canvasBody.width = window.innerWidth;
-	h = canvasBody.height = 200 ;
-}
+img.src =
+	"https://ironhorsebucket.s3.us-west-1.amazonaws.com/20191213_citytrees_020+2.jpeg";
+let CanvasXSize = 1000;
+let CanvasYSize = 2000;
+let speed = 10; //lower is faster
+let scale = 1.3;
+let y = -500; //vertical offset
 
+// Main program
 
-const opts = {
-	particleColor: "#3d3d3d",
-	lineColor: "rgb(255, 195, 0)",
-	particleAmount: 20,
-	defaultSpeed: 0.1,
-	variantSpeed: 0.2,
-	defaultRadius: 10,
-	variantRadius: 15,
-	linkRadius: 1,
+let dx = 0.75;
+let imgW;
+let imgH;
+let x = 0;
+let clearX;
+let clearY;
+let ctx;
+
+img.onload = function () {
+	imgW = img.width * scale;
+	imgH = img.height * scale;
+	if (imgW > CanvasXSize) {
+		x = CanvasXSize - imgW;
+	} // image larger than canvas
+	if (imgW > CanvasXSize) {
+		clearX = imgW;
+	} // image larger than canvas
+	else {
+		clearX = CanvasXSize;
+	}
+	if (imgH > CanvasYSize) {
+		clearY = imgH;
+	} // image larger than canvas
+	else {
+		clearY = CanvasYSize;
+	}
+	//Get Canvas Element
+	ctx = document.querySelector("#canvas").getContext("2d");
+	//Set Refresh Rate
+	return setInterval(draw, speed);
 };
 
-window.addEventListener("resize", function(){
-	deBouncer();
-});
-
-let deBouncer = function() {
-    clearTimeout(tid);
-    tid = setTimeout(function() {
-        resizeReset();
-    }, delay);
-};
-
-let checkDistance = function(x1, y1, x2, y2){ 
-	return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-};
-
-let linkPoints = function(point1, hubs){ 
-	for (let i = 0; i < hubs.length; i++) {
-		let distance = checkDistance(point1.x, point1.y, hubs[i].x, hubs[i].y);
-		let opacity = 1 - distance / opts.linkRadius;
-		if (opacity > 0) { 
-			drawArea.lineWidth = 0.5;
-			drawArea.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
-			drawArea.beginPath();
-			drawArea.moveTo(point1.x, point1.y);
-			drawArea.lineTo(hubs[i].x, hubs[i].y);
-			drawArea.closePath();
-			drawArea.stroke();
+function draw() {
+	//Clear Canvas
+	ctx.clearRect(0, 0, clearX, clearY);
+	ctx.drawImage(img, x + 1200, y, imgW, imgH - 112);
+	//If image is <= Canvas Size
+	if (imgW <= CanvasXSize) {
+		//reset, start from beginning
+		if (x > CanvasXSize) {
+			x = 0;
+		}
+		//draw additional image
+		if (x > CanvasXSize - imgW) {
+			ctx.drawImage(img, x - CanvasXSize + 1, y, imgW + 300, imgH);
 		}
 	}
-}
-
-Particle = function(xPos, yPos){ 
-	this.x = Math.random() * w; 
-	this.y = Math.random() * h;
-	this.speed = opts.defaultSpeed + Math.random() * opts.variantSpeed; 
-	this.directionAngle = Math.floor(Math.random() * 360); 
-	this.color = opts.particleColor;
-	this.radius = opts.defaultRadius + Math.random() * opts.variantRadius; 
-	this.vector = {
-		x: Math.cos(this.directionAngle) * this.speed,
-		y: Math.sin(this.directionAngle) * this.speed
-	};
-	this.update = function(){ 
-		this.border(); 
-		this.x += this.vector.x; 
-		this.y += this.vector.y; 
-	};
-	this.border = function(){ 
-		if (this.x >= w || this.x <= 0) { 
-			this.vector.x *= -1;
+	//If image is > Canvas Size
+	else {
+		//reset, start from beginning
+		if (x > CanvasXSize) {
+			x = CanvasXSize - imgW + 650;
 		}
-		if (this.y >= h || this.y <= 0) {
-			this.vector.y *= -1;
+		//draw additional image
+		if (x > CanvasXSize - imgW) {
+			ctx.drawImage(img, x - imgW + 1, y, imgW, imgH - 160);
 		}
-		if (this.y > h) this.y = h;
-		if (this.x > w) this.x = w;
-		if (this.x < 0) this.x = 0;
-		if (this.y < 0) this.y = 0;	
-	};
-	this.draw = function(){ 
-		drawArea.beginPath();
-		drawArea.arc(this.x, this.y, this.radius, 0, Math.PI*2);
-		drawArea.closePath();
-		drawArea.fillStyle = this.color;
-		drawArea.fill();
-	};
-};
-
-function setup(){ 
-	particles = [];
-	resizeReset();
-	for (let i = 0; i < opts.particleAmount; i++){
-		particles.push( new Particle() );
 	}
-	window.requestAnimationFrame(loop);
+	//draw image
+	ctx.drawImage(img, x , y, imgW, imgH);
+	//amount to move
+	x += dx;
 }
-
-function loop(){ 
-	window.requestAnimationFrame(loop);
-	drawArea.clearRect(0,0,w,h);
-	for (let i = 0; i < particles.length; i++){
-		particles[i].update();
-		particles[i].draw();
-	}
-	for (let i = 0; i < particles.length; i++){
-		linkPoints(particles[i], particles);
-	}
-}
-
-const canvasBody = document.getElementById("canvas"),
-drawArea = canvasBody.getContext("2d");
-let delay = 200, tid,
-rgb = opts.lineColor.match(/\d+/g);
-resizeReset();
-setup();
