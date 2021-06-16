@@ -166,14 +166,14 @@
     font-family: "Raleway";
   }
 
-  .about-text-hello {
+  .about-text-welcome {
     padding-top: 2%;
     font-family: "Raleway";
-    font-size: 44px;
+    font-size: 2.5vw;
   }
 
   .slide-button {
-    background: 'white';
+    background: linear-gradient(#444444, #222222);
   }
 
   .styles_wrapper__1kG3C {

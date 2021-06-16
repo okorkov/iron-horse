@@ -58,6 +58,7 @@ class About extends Component {
   render(){
     return (
       <div id="about" >
+          <p className='about-text-welcome'>Welcome!</p>
           <AboutCard data={this.slides[this.state.slideNumber]}></AboutCard>
           <IconButton className='slide-button'>
             <NavigateBeforeRoundedIcon onClick={() => this.moveToPreviousSlide()}></NavigateBeforeRoundedIcon>
