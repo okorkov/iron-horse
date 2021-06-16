@@ -14,12 +14,11 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     margin: 'auto',
     borderRadius: spacing(2), // 16px
     transition: '0.3s',
-    boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
+    boxShadow: '0px 14px 30px rgba(34, 35, 58, 0.2)',
     position: 'relative',
-    maxWidth: 500,
+    maxWidth: 750,
     marginLeft: 'auto',
     overflow: 'initial',
-    background: '#ffffff',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -30,11 +29,10 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     },
   },
   media: {
-    width: '88%',
+    minWidth: '58%',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: spacing(-3),
-    height: 0,
+    marginTop: spacing(-1),
     paddingBottom: '48%',
     borderRadius: spacing(2),
     backgroundColor: '#fff',
@@ -52,21 +50,31 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
       left: 0,
       width: '100%',
       height: '100%',
-      backgroundImage: 'linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)',
       borderRadius: spacing(2), // 16
-      opacity: 0.5,
+      opacity: 0.9,
     },
   },
   content: {
-    padding: 24,
+    padding: 39,
+    width: '90%',
+    color: 'white',
+    textAlign: 'center',
+    fontFamily: "Raleway",
+    marginTop: -10,
+    marginBottom: -10,
+    marginLeft: spacing(2),
+    fontSize: 18,
+    [breakpoints.up('md')]: {
+        textAlign: 'left',
+      },
   },
   cta: {
-    marginTop: 24,
+    marginTop: 4,
     textTransform: 'initial',
   },
 }));
 
-export const BlogCardDemo = React.memo(function BlogCard() {
+export const BlogCardDemo = React.memo(function BlogCard({data}) {
   const styles = useStyles();
   const {
     button: buttonStyles,
@@ -78,19 +86,16 @@ export const BlogCardDemo = React.memo(function BlogCard() {
       <CardMedia
         className={styles.media}
         image={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png'
+          `${data.about_image}`
         }
       />
       <CardContent>
-        <TextInfoContent
-          classes={contentStyles}
-          overline={'28 MAR 2019'}
-          heading={'What is Git ?'}
-          body={
-            'Git is a distributed version control system. Every dev has a working copy of the code and...'
-          }
-        />
-        <Button className={buttonStyles}>Read more</Button>
+        <p className={styles.content}>
+            Thanks for stopping by! We are a small, full service, family-
+            owned wood business based in Fairfax, California. We specialize in
+            custom, reclaimed wood projects from sustainable, local sources. It is a
+            blessing to live in Northern California, with such a wide variety of species.
+        </p>
       </CardContent>
     </Card>
   );
