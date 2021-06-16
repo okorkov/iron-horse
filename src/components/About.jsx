@@ -8,6 +8,11 @@ class About extends Component {
 
   state ={
     slideNumber: 0,
+    pics: [
+      this.props.data.about_image,
+      this.props.wood_pic,
+      this.props.project_pic,
+    ]
   }
 
   componentDidMount() {
@@ -39,16 +44,16 @@ class About extends Component {
 
 
   slides = [
-    {image: this.props.data.about_image, text:`Thanks for stopping by! We are a small, full service, family-
+    {image: this.state.pics[0], text:`Thanks for stopping by! We are a small, full service, family-
     owned wood business based in Fairfax, California. We specialize in
     custom, reclaimed wood projects from sustainable, local sources. It is a
     blessing to live in Northern California, with such a wide variety of species.`},
-    {image: this.props.wood_pic, text:`We also specialize in esoteric species from around the world. All of our
+    {image: this.state.pics[1], text:`We also specialize in esoteric species from around the world. All of our
     wood is one hundred percent reclaimed, and handpicked by our
     specialists; only the top twenty percent making the cut. Most of our
     projects are custom; created to the client's specification, and completely
     tailored to your liking!`},
-    {image: this.props.project_pic, text:`We always have a nice, rotating inventory as well if
+    {image: this.state.pics[2], text:`We always have a nice, rotating inventory as well if
     you would like to do your own project. We are a full-service wood mill,
     and offer planing, sanding, and milling services; collaborating with a local
     Master Metalsmith if needed. Feel free to reach out, and let's talk about
