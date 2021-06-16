@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import AboutCard from './AboutCard'
-
-
+import AboutCard from './AboutCard';
+import IconButton from '@material-ui/core/IconButton';
+import NavigateNextRoundedIcon from '@material-ui/icons/NavigateNextRounded';
+import NavigateBeforeRoundedIcon from '@material-ui/icons/NavigateBeforeRounded';
 
 class About extends Component {
 
@@ -18,7 +19,14 @@ class About extends Component {
     this.resetCarousel()
     :
     this.setState(prevstate => ({ slideNumber: prevstate.slideNumber + 1}))
-    }
+  }
+
+  moveToPreviousSlide = () => {
+    this.state.slideNumber === 0 ?
+    this.setState({slideNumber: 2})
+    :
+    this.setState(prevstate => ({ slideNumber: prevstate.slideNumber - 1}))
+  }
 
   kickOffCarousel = () => {
       setInterval(this.moveToNextSlide, 4500)
@@ -45,16 +53,18 @@ class About extends Component {
     and offer planing, sanding, and milling services; collaborating with a local
     Master Metalsmith if needed. Feel free to reach out, and let's talk about
     your next project!`},
-    {image: this.props.data.about_image, text:`Thanks for stopping by! We are a small, full service, family-
-    owned wood business based in Fairfax, California. We specialize in
-    custom, reclaimed wood projects from sustainable, local sources. It is a
-    blessing to live in Northern California, with such a wide variety of species.`}
   ]
 
   render(){
     return (
       <div id="about" >
           <AboutCard data={this.slides[this.state.slideNumber]}></AboutCard>
+          <IconButton className='slide-button'>
+            <NavigateBeforeRoundedIcon onClick={() => this.moveToPreviousSlide()}></NavigateBeforeRoundedIcon>
+          </IconButton>
+          <IconButton className='slide-button'>
+            <NavigateNextRoundedIcon onClick={() => this.moveToNextSlide()}></NavigateNextRoundedIcon>
+          </IconButton>
       </div>
     )
   };

@@ -172,6 +172,10 @@
     font-size: 44px;
   }
 
+  .slide-button {
+    background: 'white';
+  }
+
   .styles_wrapper__1kG3C {
     min-height: 0 !important;
     background: none !important;
