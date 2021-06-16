@@ -1,9 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
 import AboutCard from './AboutCard'
 
 
 
-const About = (props) => {
+class About extends Component {
+
+  state ={
+    slideNumber: 0,
+  }
+
+  slides = [
+    {image: this.props.data.about_image, text:`Thanks for stopping by! We are a small, full service, family-
+    owned wood business based in Fairfax, California. We specialize in
+    custom, reclaimed wood projects from sustainable, local sources. It is a
+    blessing to live in Northern California, with such a wide variety of species.`},
+    {image: this.props.project_pic, text:`We also specialize in esoteric species from around the world. All of our
+    wood is one hundred percent reclaimed, and handpicked by our
+    specialists; only the top twenty percent making the cut. Most of our
+    projects are custom; created to the client&#39;s specification, and completely
+    tailored to your liking!`},
+    {image: this.props.wood_pic, text:`We always have a nice, rotating inventory as well if
+    you would like to do your own project. We are a full-service wood mill,
+    and offer planing, sanding, and milling services; collaborating with a local
+    Master Metalsmith if needed. Feel free to reach out, and let&#39;s talk about
+    your next project!`},
+  ]
+
+render(){
   return (
     <div id="about" >
       {/* <img src={(props.data)? props.data.about_image: "https://live.staticflickr.com/65535/51175695010_8173e223cb_c.jpg"}
@@ -28,9 +51,11 @@ const About = (props) => {
             your next project!`
           }
         </p> */}
-        <AboutCard data={props.data}></AboutCard>
+        <AboutCard data={this.slides[this.state.slideNumber]}></AboutCard>
+        {console.log(this.props)}
     </div>
-  );
+  )
+  };
 }
 
 export default About;

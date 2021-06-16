@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
@@ -62,7 +61,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     marginTop: -10,
     marginBottom: -10,
     marginLeft: spacing(2),
-    fontSize: 18,
+    fontSize: 19,
     [breakpoints.up('md')]: {
         textAlign: 'left',
       },
@@ -81,15 +80,12 @@ export const BlogCardDemo = React.memo(function BlogCard({data}) {
       <CardMedia
         className={styles.media}
         image={
-          `${data.about_image}`
+          `${data.image}`
         }
       />
       <CardContent>
         <p className={styles.content}>
-            Thanks for stopping by! We are a small, full service, family-
-            owned wood business based in Fairfax, California. We specialize in
-            custom, reclaimed wood projects from sustainable, local sources. It is a
-            blessing to live in Northern California, with such a wide variety of species.
+            {data.text}
         </p>
       </CardContent>
     </Card>
