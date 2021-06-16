@@ -32,7 +32,7 @@ class Nav extends Component {
               path:"/",
               isAuth: true,
               onClick: () => {
-                window.location.href = "#about";
+                window.location.href = "#";
               },
             },
             {
