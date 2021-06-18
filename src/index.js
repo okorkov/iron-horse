@@ -109,7 +109,7 @@ function draw() {
 		}
 	}
 	//draw image
-	ctx.drawImage(img, x , y, imgW, imgH);
+	ctx.drawImage(img, x + 800 , y, imgW, imgH);
 	//amount to move
 	x += dx;
 }

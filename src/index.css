@@ -245,7 +245,9 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    opacity: 0.7;
+    opacity: 0.8;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0 !important;
   }
 
   ._2Gsmq {

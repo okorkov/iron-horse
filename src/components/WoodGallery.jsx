@@ -10,7 +10,19 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 class WoodGallery extends Component {
 
   state = {
-    images: []
+    images: [],
+    names: [
+      'you',
+      'are',
+      'such',
+      'a',
+      'f**',
+      'just',
+      'admit',
+      'it',
+      'already',
+      'dude',
+      ]
   }
 
   componentDidMount() {
@@ -68,10 +80,10 @@ class WoodGallery extends Component {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <DztImageGalleryComponent images={this.state.images.slice(0,4).map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>
+          <DztImageGalleryComponent images={this.state.images.slice(0,4).map((e, index) => ({ url: e, thumbUrl: e, title: this.state.names[index] }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>
         </AccordionSummary>
         <AccordionDetails>
-          <DztImageGalleryComponent images={this.state.images.slice(4, this.state.images.length).map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>
+          <DztImageGalleryComponent images={this.state.images.slice(4, this.state.images.length).map((e, index) => ({ url: e, thumbUrl: e, title: this.state.names[index + 4] }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>
         </AccordionDetails>
         </Accordion> 
         :
