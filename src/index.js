@@ -44,7 +44,7 @@ img.src =
 	"https://ironhorsebucket.s3.us-west-1.amazonaws.com/20191213_citytrees_020+2.jpeg";
 let CanvasXSize = 1000;
 let CanvasYSize = 2000;
-let speed = 50; //lower is faster
+let speed = 30; //lower is faster
 let scale = 1.3;
 let y = -500; //vertical offset
 
@@ -109,7 +109,7 @@ function draw() {
 		}
 	}
 	//draw image
-	ctx.drawImage(img, x + 800 , y, imgW, imgH);
+	ctx.drawImage(img, x , y, imgW, imgH);
 	//amount to move
 	x += dx;
 }

@@ -45,8 +45,8 @@ class About extends Component {
 
   slides = [
     {image: this.props.data.about_image, text: this.props.data.about_text.slice(0,278)},
-    {image: this.props.wood_pic, text: this.props.data.about_text.slice(278,538)},
-    {image: this.props.project_pic, text: this.props.data.about_text.slice(538,this.props.data.about_text.length) },
+    {image: this.props.wood_pic.url, text: this.props.data.about_text.slice(278,538)},
+    {image: this.props.project_pic.url, text: this.props.data.about_text.slice(538,this.props.data.about_text.length) },
   ]
 
   render(){

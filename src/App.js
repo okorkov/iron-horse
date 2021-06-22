@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://ironhorsestudio.herokuapp.com/api')
+    axios.get('https://www.ironspringsroad.com//api')
       .then(data => this.setState({ isLoaded: true, data: data.data }))
   }
 

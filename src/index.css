@@ -36,7 +36,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    height: 6.5%;
+    height: 14rem;
     width: 100%;
   }
 
@@ -198,8 +198,8 @@
     text-align: center;
   }
 
-  .styles_gridItem__nPXhF figure > div > img {
-    opacity: 0.9 !important;
+  div > .styles_gridItem__nPXhF figure > div > img {
+    opacity: 0.8 ;
   }
 
   .input {
@@ -258,7 +258,7 @@
     width: 300px !important;
     height: 300px;
     object-fit: cover !important;
-    box-shadow: 15px 15px 15px 0 rgb(10 10 10 / 82);
+    box-shadow: 0px 5px 25px 0 rgb(10 10 10);
   }
 
   .MuiAccordionSummary-content {
@@ -299,7 +299,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    height: 3%;
+    height: 10rem;
     width: 100%;
   }
 

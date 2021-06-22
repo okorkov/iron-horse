@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import DztImageGalleryComponent from "reactjs-image-gallery";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -29,8 +28,8 @@ class ProjectsGallery extends Component {
       <>
       <p className="category">Projects</p>
       {(this.state.loadMore)?
-      <DztImageGalleryComponent images={this.state.images.map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>:
-      <DztImageGalleryComponent images={this.state.images.slice(0,4).map(e => ({ url: e, thumbUrl: e }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/> }
+      <DztImageGalleryComponent images={this.state.images.map(e => ({ url: e.url, thumbUrl: e.url, title: e.desc }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/>:
+      <DztImageGalleryComponent images={this.state.images.slice(0,4).map(e => ({ url: e.url, thumbUrl: e.url, title: e.desc }))} hideRotate hideDownload hideZoom imageBackgroundColor='#e4e4e8'/> }
       <div id="projects-gal" style={{textAlign: 'center', fontSize: '18px', color: '#858484', textDecoration: 'underline'}}
         onClick={() => this.loadMoreImages()}>
         <ExpandMoreIcon />
@@ -50,4 +49,3 @@ class ProjectsGallery extends Component {
 }
 
 export default ProjectsGallery;
-
