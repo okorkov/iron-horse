@@ -44,7 +44,7 @@ img.src =
 	"https://ironhorsebucket.s3.us-west-1.amazonaws.com/20191213_citytrees_020+2.jpeg";
 let CanvasXSize = 1000;
 let CanvasYSize = 2000;
-let speed = 30; //lower is faster
+let speed = 40; //lower is faster
 let scale = 1.3;
 let y = -500; //vertical offset
 
@@ -83,6 +83,7 @@ img.onload = function () {
 };
 
 function draw() {
+	let start = true
 	//Clear Canvas
 	ctx.clearRect(0, 0, clearX, clearY);
 	ctx.drawImage(img, x + 1200, y, imgW, imgH - 112);
@@ -101,15 +102,20 @@ function draw() {
 	else {
 		//reset, start from beginning
 		if (x > CanvasXSize) {
-			x = CanvasXSize - imgW + 650;
+			x = CanvasXSize - imgW;
 		}
 		//draw additional image
 		if (x > CanvasXSize - imgW) {
-			ctx.drawImage(img, x - imgW + 1, y, imgW, imgH - 160);
+			ctx.drawImage(img, x - 1400, y, imgW, imgH - 160);
 		}
 	}
 	//draw image
-	ctx.drawImage(img, x , y, imgW, imgH);
+	if(start) {
+		ctx.drawImage(img, x + 800, y, imgW, imgH);
+		start = false;
+	} else {
+		ctx.drawImage(img, x , y, imgW, imgH);
+	}
 	//amount to move
 	x += dx;
 }

@@ -82,6 +82,11 @@
     opacity: 1;
   }
 
+  .makeStyles-root-1 {
+    box-shadow: 0px 0px 0px rgb(34 35 58 / 20%) !important;
+    transition: 10s !important;
+  }
+
   .styles_wrapper__1kG3C {
     background: #e4e4e8 !important;
   }
