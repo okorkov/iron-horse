@@ -6,7 +6,6 @@ import Contacts from './components/Contacts';
 import WoodGallery from './components/WoodGallery';
 import ProjectsGallery from './components/ProjectsGallery';
 import React from 'react'
-import axios from 'axios';
 import Yelp from './components/Yelp';
 class App extends React.Component {
 
@@ -22,7 +21,7 @@ class App extends React.Component {
       },
       project_pics: [
       {
-      url: "/pi1.jpeg",
+      url: `"/pi1.jpeg"`,
       desc: "Buckeye Burl epoxy charcuterie board"
       },
       {
