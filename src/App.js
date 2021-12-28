@@ -21,7 +21,7 @@ class App extends React.Component {
       },
       project_pics: [
       {
-      url: `"/pi1.jpeg"`,
+      url: "/pi1.jpeg",
       desc: "Buckeye Burl epoxy charcuterie board"
       },
       {
